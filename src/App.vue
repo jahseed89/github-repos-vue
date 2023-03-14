@@ -1,7 +1,10 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <h2>Github App</h2>
+    <div class="links-holder">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/repos">Repositories</router-link>
+    </div>
   </nav>
   <router-view/>
 </template>
@@ -16,12 +19,24 @@
 }
 
 nav {
-  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
 }
 
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  text-decoration: none;
+  
+}
+
+.links-holder {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+
 }
 
 nav a.router-link-exact-active {
