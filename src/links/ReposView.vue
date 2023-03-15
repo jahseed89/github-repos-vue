@@ -4,8 +4,8 @@
     <h2>Repository Link</h2>
   </div>
   <div v-for="repo in repos" :key="repo.id" class="repos">
-    <p>{{ repo.url.slice(39) }}</p>
-    <a v-bind:href="repo.html_url " target="_blank">{{ repo.html_url }}</a>
+    <p>{{ repo.name }}</p>
+    <a v-bind:href="repo.html_url" target="_blank">{{ repo.html_url }}</a>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   name: "ReposView",
   data() {
     return {
-      repos: null,
+      repos: [],
     };
   },
 
@@ -29,20 +29,30 @@ export default {
 </script>
 
 <style>
-  .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  width: 60%;
+  margin: 0 auto;
+}
 
-  }
-
-  .repos {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 30px;
-  }
-  .repos a {
-    text-decoration: none;
-    color: #000;
-  }
+.repos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  width: 60%;
+  margin: 0 auto;
+  border: 1px dashed #fff;
+}
+.repos p {
+  color: #42b983;
+  font-size: 1.2rem;
+}
+.repos a {
+  text-decoration: none;
+  color: #42b983;
+  font-size: 1.2rem;
+}
 </style>

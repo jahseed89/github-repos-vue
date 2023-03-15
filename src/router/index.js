@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../links/Home.vue'
+import PageNotFoundVue from '@/links/PageNotFound.vue'
 
 const routes = [
   {
@@ -10,15 +11,14 @@ const routes = [
   {
     path: '/repos',
     name: 'repos',
-    
-   
     component: () => import('../links/ReposView.vue')
   },
-  // {
-  //   path: '*',
-   
-  //   component: () => import('../links/PageNotFound.vue')
-  // }
+  {
+    name: 'error-page',
+    path: '/:pathMatch(.*)*',
+    component: PageNotFoundVue
+  }
+  
 ]
 
 const router = createRouter({
