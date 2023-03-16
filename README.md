@@ -22,3 +22,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+<!-- Deployed link -->
+https://resonant-beignet-17aa97.netlify.app/

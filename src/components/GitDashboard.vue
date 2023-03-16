@@ -1,12 +1,12 @@
 <template>
   <div  class="container" >
-    <h1 class="title">Welcome tos Github Page</h1>
+    <h1 class="title">Welcome to {{users.login}}'s Github Page</h1>
     <div class="descriptions">
-      <div>
-        <!-- <img v-bind:src="user.avatar_url" alt="mapic" />
-        <p>{{ user.name }}</p>
-        <p>{{ user.login }}</p>
-        <p>{{ user.bio }}</p> -->
+      <div :key="users.id">
+        <img v-bind:src="users.avatar_url" alt="mapic" />
+        <p>{{ users.name }}</p>
+        <p>{{ users.login }}</p>
+        <p>{{ users.bio }}</p>
       </div>
       <div class="get-repos">
         <router-link to="/repos">Get Repos</router-link>
@@ -21,12 +21,12 @@ export default {
   name: "GitDashboard",
   data() {
     return {
-      users: null,
+      users: {},
     };
   },
 
-  async mounted() {
-    await axios.get("https://api.github.com/users/jahseed89").then((resp) => {
+   mounted() {
+     axios.get("https://api.github.com/users/jahseed89").then((resp) => {
       this.users = resp.data;
       console.warn(this.users);
     });

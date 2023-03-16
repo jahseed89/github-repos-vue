@@ -14,8 +14,8 @@ const routes = [
     component: () => import('../links/ReposView.vue')
   },
   {
-    name: 'error-page',
     path: '/:pathMatch(.*)*',
+    name: 'error-page',
     component: PageNotFoundVue
   }
   

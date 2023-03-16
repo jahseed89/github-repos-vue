@@ -7,23 +7,35 @@
     <p>{{ repo.name }}</p>
     <a v-bind:href="repo.html_url" target="_blank">{{ repo.html_url }}</a>
   </div>
+  <div>
+    <PaginationView  />
+  </div>
+  
 </template>
 
 <script>
 import axios from "axios";
 
+
 export default {
   name: "ReposView",
+
+
   data() {
     return {
       repos: [],
+
     };
+
+
   },
 
   mounted() {
-    axios.get("https://api.github.com/users/jahseed89/repos").then((resp) => {
-      this.repos = resp.data;
-    });
+    axios
+      .get('https://api.github.com/users/jahseed89/repos')
+      .then((resp) => {
+        this.repos = resp.data;
+      });
   },
 };
 </script>
