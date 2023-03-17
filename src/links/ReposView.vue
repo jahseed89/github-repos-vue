@@ -17,12 +17,9 @@
 
 <script>
 import axios from "axios";
-// import PaginationView from "../components/PaginationView.vue";
 
 export default {
-  // components: {
-  //   PaginationView,
-  // },
+ 
   data() {
     return {
       users: [],
