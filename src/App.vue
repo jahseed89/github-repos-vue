@@ -5,7 +5,7 @@
       <h2>Github App</h2>
     </div>
     <div class="links-holder">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link> ||
       <router-link to="/repos">Repositories</router-link>
     </div>
   </nav>
@@ -27,6 +27,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
+
 }
 
 .git-logo {
@@ -49,11 +50,40 @@ nav a {
   display: flex;
 }
 
-.logo-holder img {
+.title-logo img {
   object-fit: cover;
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
 }
+
+/* On media screens */
+@media (max-width: 1740px) {
+  .links-holder {
+    width: 15%;
+  }
+}
+
+@media (max-width: 540px) {
+  nav {
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 20px;
+  }
+  .links-holder {
+    gap: 10px;
+  }
+  .git-logo{
+    width: 80px;
+    height: 50px;
+  }
+  .title-logo h2 {
+    font-size: 18px;
+  }
+  
+}
+
+
+
 </style>
